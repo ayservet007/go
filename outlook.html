@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Opening Outlook...</title></head>
+<body>
+<script>
+var ua = navigator.userAgent;
+if (/iPhone|iPad|iPod/.test(ua)) {
+  location.href = "ms-outlook://";
+  setTimeout(function(){ location.href = "https://outlook.live.com/calendar"; }, 800);
+} else if (/Android/.test(ua)) {
+  location.href = "intent:#Intent;package=com.microsoft.office.outlook;end";
+  setTimeout(function(){ location.href = "https://outlook.live.com/calendar"; }, 800);
+} else {
+  location.href = "https://outlook.live.com/calendar";
+}
+</script>
+<noscript><meta http-equiv="refresh" content="0;url=https://outlook.live.com/calendar"></noscript>
+</body>
+</html>

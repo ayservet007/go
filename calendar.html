@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Opening Calendar...</title></head>
+<body>
+<script>
+var ua = navigator.userAgent;
+if (/iPhone|iPad|iPod|Macintosh/.test(ua) && 'ontouchend' in document) {
+  // iOS / iPadOS — Apple Calendar
+  location.href = "calshow://";
+  setTimeout(function(){ location.href = "https://calendar.google.com"; }, 800);
+} else if (/Android/.test(ua)) {
+  // Android — Google Calendar app intent, fallback to web
+  location.href = "intent://calendar#Intent;scheme=content;package=com.google.android.calendar;end";
+  setTimeout(function(){ location.href = "https://calendar.google.com"; }, 800);
+} else {
+  location.href = "https://calendar.google.com";
+}
+</script>
+<noscript><meta http-equiv="refresh" content="0;url=https://calendar.google.com"></noscript>
+</body>
+</html>

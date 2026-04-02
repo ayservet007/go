@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Opening Reminders...</title></head>
+<body>
+<script>
+var ua = navigator.userAgent;
+if (/iPhone|iPad|iPod|Macintosh/.test(ua) && 'ontouchend' in document) {
+  // iOS / iPadOS — Apple Reminders
+  location.href = "x-apple-reminderkit://";
+  setTimeout(function(){ location.href = "https://www.icloud.com/reminders"; }, 800);
+} else if (/Android/.test(ua)) {
+  location.href = "intent:#Intent;package=com.google.android.apps.tasks;end";
+  setTimeout(function(){ location.href = "https://www.icloud.com/reminders"; }, 800);
+} else {
+  location.href = "https://www.icloud.com/reminders";
+}
+</script>
+<noscript><meta http-equiv="refresh" content="0;url=https://www.icloud.com/reminders"></noscript>
+</body>
+</html>

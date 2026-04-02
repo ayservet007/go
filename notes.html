@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Opening Notes...</title></head>
+<body>
+<script>
+var ua = navigator.userAgent;
+if (/iPhone|iPad|iPod|Macintosh/.test(ua) && 'ontouchend' in document) {
+  // iOS / iPadOS — Apple Notes
+  location.href = "mobilenotes://";
+  setTimeout(function(){ location.href = "https://keep.google.com"; }, 800);
+} else if (/Android/.test(ua)) {
+  location.href = "intent:#Intent;package=com.google.android.keep;end";
+  setTimeout(function(){ location.href = "https://keep.google.com"; }, 800);
+} else {
+  location.href = "https://keep.google.com";
+}
+</script>
+<noscript><meta http-equiv="refresh" content="0;url=https://keep.google.com"></noscript>
+</body>
+</html>
