@@ -1,19 +1,154 @@
 <!DOCTYPE html>
-<html><head><meta charset="utf-8"><title>Opening Notes...</title></head>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Opening Notes...</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #faf8f5;
+      color: #4a3f35;
+      font-family: Georgia, 'Times New Roman', serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .card {
+      background: #ffffff;
+      border: 1px solid #e8e0d6;
+      border-radius: 16px;
+      padding: 48px 40px 40px;
+      max-width: 420px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 4px 24px rgba(196,168,130,0.10);
+    }
+
+    .brand {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-style: italic;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #c4a882;
+      letter-spacing: 0.04em;
+      margin-bottom: 36px;
+    }
+
+    .icon {
+      font-size: 3rem;
+      line-height: 1;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .title {
+      font-family: Georgia, serif;
+      font-size: 1.5rem;
+      font-weight: normal;
+      color: #4a3f35;
+      margin-bottom: 14px;
+    }
+
+    .description {
+      font-size: 0.9rem;
+      line-height: 1.65;
+      color: #7a6e65;
+      margin-bottom: 24px;
+    }
+
+    .description strong {
+      color: #4a3f35;
+    }
+
+    .note {
+      font-size: 0.82rem;
+      color: #c4a882;
+      background: #fdf9f4;
+      border: 1px solid #e8e0d6;
+      border-radius: 8px;
+      padding: 10px 14px;
+      margin-bottom: 32px;
+      line-height: 1.5;
+    }
+
+    .spinner-wrap {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 36px;
+    }
+
+    .spinner {
+      width: 36px;
+      height: 36px;
+      border: 3px solid #e8e0d6;
+      border-top-color: #c4a882;
+      border-radius: 50%;
+      animation: spin 0.9s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .divider {
+      border: none;
+      border-top: 1px solid #e8e0d6;
+      margin: 0 0 18px;
+    }
+
+    footer {
+      font-size: 0.75rem;
+      color: #b0a499;
+      letter-spacing: 0.03em;
+    }
+  </style>
+</head>
 <body>
-<script>
-var ua = navigator.userAgent;
-if (/iPhone|iPad|iPod|Macintosh/.test(ua) && 'ontouchend' in document) {
-  // iOS / iPadOS — Apple Notes
-  location.href = "mobilenotes://";
-  setTimeout(function(){ location.href = "https://keep.google.com"; }, 800);
-} else if (/Android/.test(ua)) {
-  location.href = "intent:#Intent;package=com.google.android.keep;end";
-  setTimeout(function(){ location.href = "https://keep.google.com"; }, 800);
-} else {
-  location.href = "https://keep.google.com";
-}
-</script>
-<noscript><meta http-equiv="refresh" content="0;url=https://keep.google.com"></noscript>
+  <div class="card">
+    <div class="brand">PlanCraft Studio</div>
+
+    <span class="icon">📝</span>
+    <h1 class="title">Opening Notes...</h1>
+
+    <p class="description">
+      This is a secure redirect page from your <strong>PlanCraft Studio</strong> planner.
+      You will be redirected to <strong>Apple Notes</strong> (iOS) or
+      <strong>Google Keep</strong> (Android) automatically.
+    </p>
+
+    <div class="note">
+      If prompted, tap <strong>Allow</strong> or <strong>Open</strong> to continue.
+    </div>
+
+    <div class="spinner-wrap">
+      <div class="spinner"></div>
+    </div>
+
+    <hr class="divider">
+    <footer>PlanCraft Studio &middot; Secure Smart Redirect</footer>
+  </div>
+
+  <script>
+  var ua = navigator.userAgent;
+  if (/iPhone|iPad|iPod|Macintosh/.test(ua) && 'ontouchend' in document) {
+    // iOS / iPadOS — Apple Notes
+    location.href = "mobilenotes://";
+    setTimeout(function(){ location.href = "https://keep.google.com"; }, 800);
+  } else if (/Android/.test(ua)) {
+    location.href = "intent:#Intent;package=com.google.android.keep;end";
+    setTimeout(function(){ location.href = "https://keep.google.com"; }, 800);
+  } else {
+    location.href = "https://keep.google.com";
+  }
+  </script>
+  <noscript><meta http-equiv="refresh" content="0;url=https://keep.google.com"></noscript>
 </body>
 </html>
